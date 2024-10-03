@@ -51,7 +51,11 @@
         </section>
         <section>
             <h2>Everything</h2>
+            <!-- The picture tag is used as an alternative to img when we need robust image optimization -->
             <picture>
+                <!-- picture contains an img tag (which display the image), and any number of source tags -->
+                <!-- The source tags each provide an option for what image to display, depending on the provided media query -->
+                <!-- In this case, we are also providing 3 resolution options for each source, so different device pixel densities are accounted for. -->
                 <source srcset="https://dummyimage.com/1200x600,
                                 https://dummyimage.com/2400x1200 2x, 
                                 https://dummyimage.com/3600x1800 3x"
@@ -68,6 +72,8 @@
                                 https://dummyimage.com/640x640 2x,
                                 https://dummyimage.com/960x960 3x" 
                         media="(max-width:319px)">
+                <!-- We still need an img tag, which is the tag that displays the image selected from the above sources. -->
+                <!-- It also serves as a fallback if the sources don't load. -->
                 <img src="https://dummyimage.com/640x640" alt="">
             </picture>
         </section>
